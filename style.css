@@ -1,0 +1,60 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5dc; /* Beige Green */
+  color: #000; /* Black */
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333; /* Black */
+  color: #f5f5dc; /* Beige Green */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #ccc; /* Grey */
+  padding: 0.5rem;
+}
+
+nav button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #333;
+  color: #f5f5dc;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: #666; /* Darker Grey */
+}
+
+main {
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+}
+
+#task-list li {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+#timer, #clock, #alarm {
+  margin-top: 1rem;
+}
