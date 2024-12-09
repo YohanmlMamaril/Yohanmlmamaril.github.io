@@ -1,132 +1,157 @@
+/* General Body Style */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comic Sans MS', sans-serif;
+  background-color: #f9f5e1;  /* Soft cream background */
   margin: 0;
   padding: 0;
-  background-color: #f5f5dc; /* Beige Green */
-  color: #000; /* Black */
-}
-
-header {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333; /* Black */
-  color: #f5f5dc; /* Beige Green */
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #ccc; /* Grey */
-  padding: 0.5rem;
-}
-
-nav button {
-  margin: 0 0.5rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #333;
-  color: #f5f5dc;
-  cursor: pointer;
-}
-
-nav button:hover {
-  background-color: #666; /* Darker Grey */
-}
-
-main {
-  padding: 1rem;
-}
-
-.hidden {
-  display: none;
-}
-
-#task-list {
-  list-style: none;
-  padding: 0;
-}
-
-#task-list li {
-  display: flex;
-  justify-content: space-between;
-  background-color: #fff;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-}
-
-#timer, #clock, #alarm {
-  margin-top: 1rem;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="time"],
-input[type="datetime-local"] {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff; /* Clean white for a modern look */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="time"]:focus,
-input[type="datetime-local"]:focus {
-  outline: none;
-  border-color: #a3c9a8; /* Beige green for focus */
-  box-shadow: 0 2px 6px rgba(163, 201, 168, 0.5);
-  background-color: #f9f9f9; /* Slightly off-white for interaction */
-}
-
-button {
-  padding: 10px 20px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #333; /* Dark button background */
-  color: #f5f5dc; /* Beige green text */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #666; /* Slightly lighter when hovered */
-}
-
-button:active {
-  background-color: #444; /* Darker when pressed */
-}
-
-/* Modal Styling */
-#settings-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-.hidden {
-  display: none;
-}
-
-.modal-content {
-  background: #fff;
+/* Container for the clock and tasks */
+.clock-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff6f1;  /* Light peachy background for the container */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
 }
 
+/* Clock styling */
+canvas {
+  background-color: #ffffff;  /* White background for the clock */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);  /* Slight shadow for a cozy feel */
+  border: 4px solid #f0e5d8;  /* Soft border around the clock */
+}
+
+/* Styling for the task list */
+.task-list {
+  margin-left: 30px;
+  padding: 20px;
+  background-color: #fff9f3;  /* Light peach background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow for tasks */
+}
+
+#taskList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#taskList li {
+  background-color: #fbe9d4;  /* Soft warm color for each task */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Soft shadow around each task */
+  font-size: 18px;  /* Slightly larger font size for readability */
+}
+
+h3 {
+  font-size: 1.8em;
+  color: #4f4a4a;  /* Darker color for the task list title */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Fancy hover effect for tasks */
+#taskList li:hover {
+  background-color: #f7d4a3;  /* Light orange when hovering over tasks */
+  cursor: pointer;
+}
+
+/* Optional: Add a cozy font for headings */
+@font-face {
+  font-family: 'Handwritten';
+  src: url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+}
+
+h1, h2, h3 {
+  font-family: 'Pacifico', cursive;  /* Handwritten style font for titles */
+}
+
+/* Add Task Section */
+.add-task {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#newTaskInput, .deadline-container input {
+  width: 45%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #f0e5d8;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.deadline-container input {
+  width: 40%;  /* Smaller width for the deadline and time inputs */
+}
+
+#addTaskButton {
+  padding: 10px 20px;
+  background-color: #ffbc67;  /* Soft orange color */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#addTaskButton:hover {
+  background-color: #ff9e4a;  /* Darker orange on hover */
+}
+
+#addTaskButton:active {
+  background-color: #e88c3e;  /* Slightly darker when clicked */
+}
+
+.deadline-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* Circular checkbox style */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+}
+
+.checkbox-container input[type="checkbox"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}

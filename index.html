@@ -1,55 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRODA - Life Manager</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRODA</title>
 </head>
-<body>
-  <header>
-    <h1>PRODA</h1>
-    <p>The simple and elegant life manager</p>
-  </header>
+
+<body style="background-color: #fff3f5">
   <center>
-  <nav>
-    <button onclick="showSection('calendar')">Calendar</button>
-    <button onclick="showSection('tasks')">Tasks</button>
-    <button onclick="showSection('utilities')">Utilities</button>
-  </nav>
-  <main>
-    <section id="calendar" class="hidden">
-      <h2>Calendar</h2>
-      <div id="calendar-view"></div>
-    </section>
-    <section id="tasks" class="hidden">
-      <h2>Task Manager</h2>
-      <form id="task-form">
-        <input type="text" id="task-input" placeholder="Enter task" required>
-        <input type="datetime-local" id="deadline-input">
-        <button type="submit">Add Task</button>
-      </form>
-      <ul id="task-list"></ul>
-    </section>
-    <section id="utilities" class="hidden">
-      <h2>Utilities</h2>
-      <div id="clock"></div>
-      <div id="timer">
-        <input type="number" id="timer-input" placeholder="Set timer (sec)">
-        <button onclick="startTimer()">Start</button>
-        <button onclick="resetTimer()">Reset</button>
-        <p id="timer-display">00:00</p>
-      </div>
-      <div id="alarm">
-        <input type="time" id="alarm-input">
-        <button onclick="setAlarm()">Set Alarm</button>
-      </div>
-    </section>
-
-
-    
-    
-  </main>
-  <script src="script.js"></script>
+  <h1 style="font-size: 65px">PRODA</h1>
+  <h4>Your elegant life manager</h4>
+  <a href="task-manager.html">
+    <button id="login-button" style = "background-color: #f7f1cb; button-radius: 12px; "><h3>CONTINUE</h3></button>
+  </a>
 </body>
+
 </html>
