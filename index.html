@@ -1,19 +1,87 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PRODA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to PRODA</title>
+  <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #fbe9d4, #fbe9d4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Welcome Container */
+.welcome-container {
+  text-align: center;
+  background-color: #fff;
+  border: 5px solid #e0cd96;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Welcome Title */
+.welcome-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0px #eddcad;
+}
+
+/* Welcome Message */
+.welcome-message {
+  font-size: 1.5rem;
+  color: #f0000;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.welcome-btn {
+  font-size: 1rem;
+  background-color: #e0cd96;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid #f7e4d5;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #333;
+  transition: all 0.2s ease-in-out;
+}
+
+.welcome-btn:hover {
+  background-color: #f7e4d5;
+  transform: scale(1.1);
+  box-shadow: 3px 3px 0px #333;
+}
+  </style>
 </head>
-
-<body style="background-color: #fff3f5">
-  <center>
-  <h1 style="font-size: 65px">PRODA</h1>
-  <h4>Your elegant life manager</h4>
-  <a href="task-manager.html">
-    <button id="login-button" style = "background-color: #f7f1cb; button-radius: 12px; "><h3>CONTINUE</h3></button>
-  </a>
+<body>
+  <div class="welcome-container">
+    <div class="welcome-box">
+      <h1 class="welcome-title">Welcome to Cozy Clock!</h1>
+      <p class="welcome-message">Manage your tasks with a cozy and simple design. Let’s get started!</p>
+      <button class="welcome-btn" onclick="startApp()">Get Started</button>
+    </div>
+  </div>
+  <script>
+    function startApp() {
+  // Redirect to your clock app page
+  window.location.href = "task-manager.html";
+}
+  </script>
 </body>
-
 </html>
