@@ -18,15 +18,19 @@ let tasks = [
   { description: "Task 3: Take a Break", deadline: "12/10, 16:00" },
 ];
 
-// Function to draw clock numbers
-function drawNumbers() {
-  ctx.font = '24px Comic Sans MS';
-  ctx.fillStyle = '#333';
+function drawClockNumbers() {
+  const numberRadius = radius + 20; // Place numbers slightly outside the clock circle
+  const numberFont = '16px Comic Sans MS'; // Font style for numbers
+  ctx.font = numberFont;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = '#333'; // Number color
+
   for (let num = 1; num <= 12; num++) {
-    const angle = (num - 3) * (Math.PI / 6);
-    const x = center.x + radius * Math.cos(angle);
-    const y = center.y + radius * Math.sin(angle);
-    ctx.fillText(num, x - 12, y + 10);
+    const angle = (num - 3) * (Math.PI / 6); // Angle for each number
+    const x = center.x + numberRadius * Math.cos(angle); // X-coordinate
+    const y = center.y + numberRadius * Math.sin(angle); // Y-coordinate
+    ctx.fillText(num, x, y); // Draw the number
   }
 }
 
@@ -99,7 +103,7 @@ function updateClock() {
   ctx.strokeStyle = '#333';
   ctx.stroke();
 
-  drawNumbers();
+  drawClockNumbers();
   drawClockHands();
   drawTasksOnClock();
 }
